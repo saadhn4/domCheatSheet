@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body></body>
+  <script>
+    let user = {
+      name: "Saad",
+      age: 20,
+      isAlive: true,
+    };
+
+    //we set data in local storage using key and value
+    //key == name
+    //value == content (user here)
+
+    localStorage.setItem("data", JSON.stringify(user)); //data is the key ; browser accepts data in string thats why
+    localStorage.setItem("cfi", "suhail"); // here my key is cfi and value is suhail
+
+    let getUserData = localStorage.getItem("data");
+    console.log(getUserData); // this will show in browser console
+
+    localStorage.removeItem("cfi");
+
+    // we use the key in getItem and removeItem
+  </script>
+</html>
