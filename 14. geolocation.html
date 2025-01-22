@@ -19,7 +19,7 @@
           (position) => {
             let lat = position.coords.latitude;
             let long = position.coords.longitude;
-            locationId.innerHTML = `Your location is Latitude: ${lat} Longitude: ${long} `;
+            locationId.outerHTML = ` <a target="_blank" href='https://www.google.com/maps/?q=${lat},${long}'>Google Maps Link</a>`;
           },
           (error) => {
             locationId.innerHTML = `Failed to fetch location. Please allow location access`;
