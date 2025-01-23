@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a target="_blank" href="https://google.com" id="atag">Google</a>
+  </body>
+  <script>
+    let atag = document.getElementById("atag");
+    atag.addEventListener("click", () => {
+      console.log("clicked");
+      // stops from redirecting to google aka stopping dom functionality using preventDefault
+      event.preventDefault();
+    });
+  </script>
+</html>
