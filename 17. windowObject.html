@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button>
+    <button id="btn3">Button 3</button>
+  </body>
+  <script>
+    let btn1 = document.getElementById("btn1");
+    let btn2 = document.getElementById("btn2");
+    let btn3 = document.getElementById("btn3");
+
+    let features = "height=500,width=800";
+    let box;
+
+    btn1.addEventListener("click", () => {
+      box = window.open("https://google.com", "google", features); //opens google as a new tab ; the second google is just text. text is important if you want the features to work
+    });
+
+    btn2.addEventListener("click", () => {
+      box = window.close();
+    });
+
+    btn3.addEventListener("click", () => {
+      box = window.open("https://suhail.app", "suhail", features);
+    });
+  </script>
+</html>

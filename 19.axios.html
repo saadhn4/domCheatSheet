@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
+      integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>Making GET API call</h1>
+    <button id="fetchPosts">Call API</button>
+    <ul id="postList"></ul>
+  </body>
+  <script>
+    const fetchPostsButtons = document.getElementById("fetchPosts");
+    const postList = document.getElementById("postList");
+
+    const apiCall = async () => {
+      try {
+        let response = await axios.get(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
+        console.log(response.data);
+
+        postList.innerHTML = "";
+        let allData = response.data;
+
+        allData.forEach((x, index) => {
+          const listItems = document.createElement("li");
+          listItems.textContent = `${index + 1}, ${x.title} `;
+          postList.appendChild(listItems);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchPostsButtons.addEventListener("click", apiCall);
+  </script>
+</html>
