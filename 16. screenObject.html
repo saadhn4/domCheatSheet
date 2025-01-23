@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a target="_blank" href="https://google.com" id="atag">Google</a>
+    <br />
+    <br />
+
+    <form id="formId">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" />
+
+      <label for="phone">Phone:</label>
+      <input type="number" name="phone" id="phone" />
+
+      <button id="submitId" type="submit">Submit</button>
+    </form>
+  </body>
+  <script>
+    // we use preventDefault so the data doesnt go in query, rather we get it and user ku phirse pura data enter nai karna padta ; main -> page doesnt get reloaded and data apne paas rehta
+
+    // let atag = document.getElementById("atag");
+    // atag.addEventListener("click", () => {
+    //   console.log("clicked");
+    //   // stops from redirecting to google aka stopping dom functionality using preventDefault
+    //   event.preventDefault();
+    // });
+
+    let formId = document.getElementById("formId");
+    formId.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value; //value jo user input mai enter karta
+      let email = document.getElementById("email").value;
+      let phone = document.getElementById("phone").value;
+
+      console.log(name, email, phone);
+
+      // screen object starts here
+
+      console.log(screen.width); //laptop display width
+      console.log(screen.height);
+      console.log(screen.colorDepth); //24bit
+      console.log(screen.orientation.type); //landscape-primary
+    });
+
+    //notes
+
+    /*
+
+    Without preventDefault - the page will reload
+    With preventDefault - the page will NOT reload
+
+    Without preventDefault - For simple form submissions to a server
+    With preventDefault - For dynamic handling (custom validations aka our API)
+
+    Without preventDefault - Browser handles submission
+    With preventDefault - You have full control over submission
+
+
+    */
+  </script>
+</html>
